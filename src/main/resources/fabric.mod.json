@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "createcombinedaddons",
+	"version": "${version}",
+	"name": "Create Combined Addons",
+	"description": "Important addons for the Create Combined Modpack",
+	"authors": [
+		"LegendarySpy"
+	],
+	"contact": {
+		"homepage": "https://legendaryspy.com/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC BY-NC-SA 4.0",
+	"icon": "assets/createcombinedaddons/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.legendaryspy.createcombinedaddons.CreateCombinedAddons"
+		],
+
+		"client": [
+			"com.legendaryspy.createcombinedaddons.CreateCombinedAddonsClient"
+		],
+
+		"fabric-datagen": [
+			"com.legendaryspy.ccaddons.CreateCombinedModDataGenerator"
+		]
+	},
+	"mixins": [
+		"createcombinedaddons.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
