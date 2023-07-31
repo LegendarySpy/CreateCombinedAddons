@@ -1,3 +1,6 @@
 {
-  "item.createcombinedaddons.spoiledfood": "Spoiled Food"
+  "item.createcombinedaddons.spoiledfood": "Spoiled Food",
+
+  "itemgroup.createcombinedaddons": "CC Addons"
+
 }

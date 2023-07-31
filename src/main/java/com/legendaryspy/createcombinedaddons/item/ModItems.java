@@ -11,17 +11,21 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item SPOILED_FOOD = registerItem("spoiledfood", new Item(new FabricItemSettings()));
+    public static final Item SPOILED_FOOD = registerItem("spoiledfood", new Item(new FabricItemSettings().food(ModFoodComponents.SPOILED_FOOD)));
 
     private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
         entries.add(SPOILED_FOOD);
     }
+
     private static Item registerItem(String name, Item item) {
-        return Registry.register (Registries. ITEM, new Identifier(CreateCombinedAddons.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, new Identifier(CreateCombinedAddons.MOD_ID, name), item);
 
     }
+
+
     public static void registerModItems() {
         CreateCombinedAddons.LOGGER.info("Registering Mod Items for " + CreateCombinedAddons.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(ModItems::addItemsToIngredientsItemGroup);
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientsItemGroup);
     }
 }
